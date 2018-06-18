@@ -1,4 +1,4 @@
-#$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Stop"
 
 # Install PHP
 function Download-File ([string] $Url, [string] $Target) {
@@ -45,7 +45,7 @@ $LastExitCode
 
 # Install Node
 Write-Output 'Installing Node'
-Install-Product node $env:NODE_VERSION
+cmd /c powershell Install-Product node $env:NODE_VERSION
 $?
 $LastExitCode
 Write-Output 'Node Installed'
