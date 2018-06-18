@@ -43,7 +43,7 @@ xdebug.remote_autostart=1
 
 # Install Node
 Write-Output 'Installing Node'
-Install-Product node $env:NODE_VERSION x64
+Install-Product node $env:NODE_VERSION
 Write-Output 'Node Installed'
 npm install -g "npm@$env:NPM_VERSION" --depth 0
 npm config -g set progress=false
