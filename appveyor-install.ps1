@@ -1,4 +1,4 @@
-$ErrorActionPreference = "Stop"
+#$ErrorActionPreference = "Stop"
 
 # Install PHP
 function Download-File ([string] $Url, [string] $Target) {
@@ -40,14 +40,24 @@ zend_extension=$xdebugPath
 xdebug.remote_enable=1
 xdebug.remote_autostart=1
 "@
+$?
+$LastExitCode
 
 # Install Node
 Write-Output 'Installing Node'
 Install-Product node $env:NODE_VERSION
+$?
+$LastExitCode
 Write-Output 'Node Installed'
 npm install -g "npm@$env:NPM_VERSION" --depth 0
+$?
+$LastExitCode
 npm config -g set progress=false
+$?
+$LastExitCode
 npm config -g set unicode=false
+$?
+$LastExitCode
 
 # Install dependencies
 Write-Output 'Installing dependencies'
